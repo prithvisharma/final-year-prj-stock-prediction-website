@@ -1,0 +1,113 @@
+<div class="main-div">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>Login to Continue</mat-card-title>
+            <mat-card-subtitle>Register if New User</mat-card-subtitle>
+        </mat-card-header>
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="Login">
+                <br>
+                <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email Address:</mat-label>
+                        <input matInput placeholder="Enter your email address" value="" formControlName="logEmail">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Password:</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your password" value=""
+                            formControlName="logPassword">
+                    </mat-form-field>
+                    <BR>
+                    <BR>
+                    <div class="example-button-row">
+                        <button class="center" mat-raised-button type="submit" [disabled]='!loginForm.valid'
+                            color="primary">Login</button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="Register">
+                <br>
+                <form class="example-form" [formGroup]="regForm" (ngSubmit)="onRegSubmit()">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>First Name:</mat-label>
+                        <input matInput placeholder="Enter your first name" value="" formControlName="rFName">
+                        <mat-error *ngIf="regForm.get('rFName').hasError('minlength')">
+                            Name should be <strong>more than 3 characters</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rFName').hasError('maxlength')">
+                            Name should be <strong>less than 15 characters</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rFName').hasError('required')">
+                            Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Secound Name:</mat-label>
+                        <input matInput placeholder="Enter your last name" value="" formControlName="rLName">
+                        <mat-error *ngIf="regForm.get('rLName').hasError('minlength')">
+                            Name should be <strong>more than 3 characters</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rLName').hasError('maxlength')">
+                            Name should be <strong>less than 15 characters</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rLName').hasError('required')">
+                            Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email Address:</mat-label>
+                        <input matInput placeholder="Ex. pat@example.com" value="" formControlName="rEmail">
+                        <mat-error
+                            *ngIf="regForm.get('rEmail').hasError('email') && !regForm.get('rEmail').hasError('required')">
+                            Please enter a <strong>valid</strong> email address
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rEmail').hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Password:</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Ex. pat@example.com" value=""
+                            formControlName="rPass">
+                        <mat-error *ngIf="regForm.get('rPass').hasError('minlength')">
+                            Password should be <strong>more than 6 characters</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rPass').hasError('maxlength')">
+                            Password should be <strong>less than 15 characters</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rPass').hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Confirm Password:</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Ex. pat@example.com" value=""
+                            formControlName="rCPass">
+                        <mat-error *ngIf="regForm.get('rCPass').hasError('minlength')">
+                            Password should be <strong>more than 6 characters</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rCPass').hasError('maxlength')">
+                            Password should be <strong>less than 15 characters</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rCPass').hasError('passwordMismatch')">
+                            Passwords do not <strong>match</strong>
+                        </mat-error>
+                        <mat-error *ngIf="regForm.get('rCPass').hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <div class="example-button-row">
+                        <button class="center" mat-raised-button type="submit" [disabled]='!regForm.valid'
+                            color="primary">Register</button>
+                    </div>
+                </form>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>

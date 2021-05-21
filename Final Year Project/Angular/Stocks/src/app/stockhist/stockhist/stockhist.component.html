@@ -1,0 +1,112 @@
+<mat-card class="main-card">
+    <h1>{{stockdetail}}</h1>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="date" matSortDirection="desc">
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header="date"> Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+            </ng-container>
+
+            <!-- Progress Column -->
+            <ng-container matColumnDef="open">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Open </th>
+                <td mat-cell *matCellDef="let row"> {{row.open}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="high">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> High </th>
+                <td mat-cell *matCellDef="let row"> {{row.high}} </td>
+            </ng-container>
+
+            <!-- Color Column -->
+            <ng-container matColumnDef="low">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Low </th>
+                <td mat-cell *matCellDef="let row"> {{row.low}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="close">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Close </th>
+                <td mat-cell *matCellDef="let row"> {{row.close}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="adjClose">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Adj. CLose </th>
+                <td mat-cell *matCellDef="let row"> {{row.adjClose}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="volume">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Volume </th>
+                <td mat-cell *matCellDef="let row"> {{row.volume}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</mat-card>
+
+<div fxLayout="row" fxLayoutAlign="strecth" fxLayoutGap="15px">
+
+    <mat-card class="main-card" fxFlex="65">
+        <div class="control-section">
+            <div>
+                <ejs-stockchart id='stockChartOhlc' [enablePeriodSelector]='enable' [chartArea]='chartArea'
+                    [primaryXAxis]='primaryXAxis' style="display:block;" [primaryYAxis]='primaryYAxis'
+                    [tooltip]='tooltip' (tooltipRender)='tooltipRender($event)' [crosshair]='crosshair'
+                    [title]='stockdetail' [titleStyle]='stockdetailstyle' (load)='load($event)'>
+                    <e-stockchart-series-collection>
+                        <e-stockchart-series [dataSource]='stockhist' type='HiloOpenClose' [animation]='animation'
+                            bearFillColor='#2ecd71' bullFillColor='#e74c3d' xName='date' high='high' low='low'
+                            open='open' close='close' name='Stock'>
+                        </e-stockchart-series>
+                    </e-stockchart-series-collection>
+                </ejs-stockchart>
+            </div>
+        </div>
+    </mat-card>
+    <!--- asdasda -->
+    <mat-card class="main-card" fxFlex="35">
+        <div class="control-section">
+            <div class="col-lg-8">
+                <ejs-chart #chart id='chartcontainer' style='display:block; width: 92%' [primaryXAxis]='primaryXAxisp'
+                    [primaryYAxis]='primaryYAxisp' [tooltip]='tooltipp' [chartArea]='chartAreap' [title]='title'
+                    [legendSettings]='legendSettingsp' (load)='loadp($event)'>
+                    <e-series-collection>
+                        <e-series [dataSource]='series1' type='Spline' xName='x' yName='y' name='Probability'
+                            [marker]='marker1p'>
+                            <e-trendlines>
+                                <e-trendline type='Linear' width=3 [marker]='markerp' name='Trend'  fill='#C64A75'>
+                                </e-trendline>
+                            </e-trendlines>
+                        </e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+        <style>
+            .control-section {
+                min-height: 450px;
+            }
+
+            #chartcontainer_Series_0_TrendLine_0 {
+                stroke-dasharray: 10;
+                -webkit-animation: dash 1s linear infinite;
+                animation: dash 1s linear infinite;
+            }
+
+            @keyframes dash {
+                to {
+                    stroke-dashoffset: -20;
+                }
+            }
+        </style>
+    </mat-card>
+</div>

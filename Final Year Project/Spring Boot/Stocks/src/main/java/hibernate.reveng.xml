@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="stocksdata" match-name="adaniports"/>
+  <table-filter match-catalog="stocksdata" match-name="asianpaint"/>
+  <table-filter match-catalog="stocksdata" match-name="axisbank"/>
+  <table-filter match-catalog="stocksdata" match-name="bajajauto"/>
+  <table-filter match-catalog="stocksdata" match-name="bajajfinsv"/>
+  <table-filter match-catalog="stocksdata" match-name="bajfinance"/>
+  <table-filter match-catalog="stocksdata" match-name="bhartiartl"/>
+  <table-filter match-catalog="stocksdata" match-name="bpcl"/>
+  <table-filter match-catalog="stocksdata" match-name="britannia"/>
+  <table-filter match-catalog="stocksdata" match-name="cipla"/>
+  <table-filter match-catalog="stocksdata" match-name="coalindia"/>
+  <table-filter match-catalog="stocksdata" match-name="divislab"/>
+  <table-filter match-catalog="stocksdata" match-name="drreddy"/>
+  <table-filter match-catalog="stocksdata" match-name="eichermot"/>
+  <table-filter match-catalog="stocksdata" match-name="grasim"/>
+  <table-filter match-catalog="stocksdata" match-name="hcltech"/>
+  <table-filter match-catalog="stocksdata" match-name="hdfc"/>
+  <table-filter match-catalog="stocksdata" match-name="hdfcbank"/>
+  <table-filter match-catalog="stocksdata" match-name="hdfclife"/>
+  <table-filter match-catalog="stocksdata" match-name="heromotoco"/>
+  <table-filter match-catalog="stocksdata" match-name="hindalco"/>
+  <table-filter match-catalog="stocksdata" match-name="hindunilvr"/>
+  <table-filter match-catalog="stocksdata" match-name="icicibank"/>
+  <table-filter match-catalog="stocksdata" match-name="indusindbk"/>
+  <table-filter match-catalog="stocksdata" match-name="infy"/>
+  <table-filter match-catalog="stocksdata" match-name="ioc"/>
+  <table-filter match-catalog="stocksdata" match-name="itc"/>
+  <table-filter match-catalog="stocksdata" match-name="jswsteel"/>
+  <table-filter match-catalog="stocksdata" match-name="kotakbank"/>
+  <table-filter match-catalog="stocksdata" match-name="lt"/>
+  <table-filter match-catalog="stocksdata" match-name="maruti"/>
+  <table-filter match-catalog="stocksdata" match-name="mm"/>
+  <table-filter match-catalog="stocksdata" match-name="nestleind"/>
+  <table-filter match-catalog="stocksdata" match-name="ntpc"/>
+  <table-filter match-catalog="stocksdata" match-name="ongc"/>
+  <table-filter match-catalog="stocksdata" match-name="powergrid"/>
+  <table-filter match-catalog="stocksdata" match-name="reliance"/>
+  <table-filter match-catalog="stocksdata" match-name="sbilife"/>
+  <table-filter match-catalog="stocksdata" match-name="sbin"/>
+  <table-filter match-catalog="stocksdata" match-name="shreecem"/>
+  <table-filter match-catalog="stocksdata" match-name="sunpharma"/>
+  <table-filter match-catalog="stocksdata" match-name="tataconsum"/>
+  <table-filter match-catalog="stocksdata" match-name="tatamotors"/>
+  <table-filter match-catalog="stocksdata" match-name="tatasteel"/>
+  <table-filter match-catalog="stocksdata" match-name="tcs"/>
+  <table-filter match-catalog="stocksdata" match-name="techm"/>
+  <table-filter match-catalog="stocksdata" match-name="titan"/>
+  <table-filter match-catalog="stocksdata" match-name="ultracemco"/>
+  <table-filter match-catalog="stocksdata" match-name="upl"/>
+  <table-filter match-catalog="stocksdata" match-name="wipro"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,69 @@
+<mat-card class="main-card">
+    <!-- <div class="mat-display-2">Nifty50</div> -->
+    <h1>Nifty50 Components</h1>
+    <mat-form-field>
+        <mat-label>Looking for something specific ?</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Start typing" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="sname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let row"><a [routerLink]="['/home/',row.sname]"
+                        (click)="onStockClick(row.sname)"> {{row.sname}} </a></td>
+            </ng-container>
+
+            <!-- Progress Column -->
+            <ng-container matColumnDef="open">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Open </th>
+                <td mat-cell *matCellDef="let row"> {{row.open}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="high">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> High </th>
+                <td mat-cell *matCellDef="let row"> {{row.high}} </td>
+            </ng-container>
+
+            <!-- Color Column -->
+            <ng-container matColumnDef="low">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Low </th>
+                <td mat-cell *matCellDef="let row"> {{row.low}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="close">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Close </th>
+                <td mat-cell *matCellDef="let row"> {{row.close}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="adjClose">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Adj. CLose </th>
+                <td mat-cell *matCellDef="let row"> {{row.adjClose}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="volume">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Volume </th>
+                <td mat-cell *matCellDef="let row"> {{row.volume}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+    </div>
+
+</mat-card>

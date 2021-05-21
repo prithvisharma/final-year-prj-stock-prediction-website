@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon">
+        <mat-icon>trending_up</mat-icon>
+    </button>
+    <span>EZ STONKS !</span>
+    <span class="example-spacer"></span>
+    <div *ngIf="userStatus === true">
+        <span>Welcome {{username}}&nbsp;</span>
+        <span>
+            <button mat-icon-button class="example-icon" (click)="toHome()">
+                <mat-icon>home</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" (click)="onLogout()">
+                <mat-icon>power_settings_new</mat-icon>
+            </button>
+        </span>
+    </div>
+
+</mat-toolbar>
+<router-outlet></router-outlet>

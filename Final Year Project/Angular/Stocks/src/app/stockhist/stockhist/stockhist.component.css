@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: auto;
+  }
+
+  .main-card{
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+  }
+
+  .control-section{
+    margin-right: 10px;
+  }
+  .control-fluid {
+    padding: 0px !important;
+}
